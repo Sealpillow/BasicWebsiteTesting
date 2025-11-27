@@ -1,4 +1,4 @@
-#  Pedro Shoes Media QA Automation**
+#  Pedro Shoes Media QA Automation
 
 This script automates **verification and screenshot capture of images and videos** on Pedro Shoes’ website across multiple countries, pages, and device modes, producing a detailed report.
 
