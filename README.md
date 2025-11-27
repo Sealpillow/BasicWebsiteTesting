@@ -1,16 +1,17 @@
-#  Pedro Shoes Media QA Automation
+# Pedro Shoes Media QA Automation
 
-This script automates **verification and screenshot capture of images and videos** on Pedro Shoes’ website across multiple countries, pages, and device modes, producing a detailed report.
+This script automates **verification and screenshot capture of images and videos** on Pedro Shoes’ website across multiple countries, pages, and device modes, producing a structured report.
 
 ---
 
 ## **1. Multi-Country & Multi-Page Asset Mapping**
 
-* Uses the `image_map` dictionary to define expected **images and videos** for:
+* Defines expected **images and videos** via the `image_map` dictionary:
 
-  * Countries: `sg`, `tw`, `at`
-  * Pages (URL paths)
-  * Device modes: `desktop` and `mobile`
+  * **Countries:** `sg`, `tw`, `at`
+  * **Pages:** URL paths per country
+  * **Device modes:** `desktop` and `mobile`
+
 * Supports common **image formats** (`.jpg`, `.png`) and **video formats** (`.mp4`, `.webm`, `.mov`, `.m4v`).
 
 ---
@@ -28,48 +29,57 @@ This script automates **verification and screenshot capture of images and videos
 ## **3. Page Load & Element Handling**
 
 * Waits for **full page load** (`document.readyState == "complete"`).
-* Dismisses overlays and popups:
+
+* Automatically dismisses overlays and popups:
 
   * **Geo-IP modal**
   * **Cookie consent banner**
   * **Embedded chat widgets**
-* Closes any **browser alerts**.
+
+* Closes any **browser alerts** (e.g., permission prompts).
 
 ---
 
 ## **4. Screenshot Capture**
 
 * Supports **images and videos**.
-* Finds elements using **XPath**:
 
-  * Images: `<img>` tags and `<source>` elements in `<picture>` tags.
-  * Videos: `<video>` tags and `<source>` inside videos.
-* Scrolls element into view before capture.
+* Locates elements using **XPath**:
+
+  * **Images:** `<img>` tags, `<source>` tags within `<picture>`
+  * **Videos:** `<video>` tags and `<source>` within videos
+
+* Scrolls each element into view before capture.
+
 * Saves screenshots in structured folders:
 
 ```
-screenshots/<mode>/<country>/<page-path>/<filename>
+screenshots/<mode>/<country>/<page-path>/<filename>.png
 ```
+
+* **Video screenshots:** Captures a static image of the video element.
 
 ---
 
 ## **5. Reporting**
 
-* Tracks **found** and **not found** files.
+* Tracks **found** and **not found** files per page.
+
 * Generates a text report (`screenshot_report.txt`) with:
 
   * Found files grouped by page
   * Not found files grouped by page
-* Prints the report to the console for immediate feedback.
+
+* Also prints the report to the console for immediate feedback.
 
 ---
 
-## **6. Workflow**
+## **6. Workflow Overview**
 
 1. Iterate through device modes: `desktop` and `mobile`.
 2. Loop through countries and page paths.
 3. Navigate to URL, dismiss overlays and alerts.
-4. Search for and capture screenshots of each image/video.
+4. Search for and capture screenshots of each **image or video**.
 5. Record results into **found/not found** lists.
 6. Save the **final report** to file and console.
 
@@ -78,25 +88,30 @@ screenshots/<mode>/<country>/<page-path>/<filename>
 ## **7. Advantages**
 
 * Handles **dynamic content** and slow-loading pages.
-* Automatically removes popups and chat widgets.
-* Supports **image and video screenshot capture**.
+* Automatically removes popups, overlays, and chat widgets.
+* Supports **both image and video screenshot capture**.
 * Produces a **structured, easy-to-read report** for QA or monitoring.
-* Works across multiple device modes without changing the code.
+* Works across multiple device modes without code changes.
 
 ---
 
-## **⚠ Could not screenshot image/video: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot take screenshot with 0 width."} **
+## **8. DevTools Screenshot Warning**
 
-This warning is caused by Chrome closing the DevTools session before Selenium’s screenshot call completes.
+```
+⚠ Could not screenshot image/video: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot take screenshot with 0 width."}
+(Session info: chrome=...)
+```
 
-This typically happens when:
+This warning occurs when Chrome closes the DevTools session before Selenium completes the screenshot.
+
+**Common causes:**
 
 * The browser is under heavy load.
-* The tab navigates or refreshes while Selenium is taking a screenshot.
+* The tab navigates or refreshes while Selenium is still capturing the screenshot.
 * ChromeDriver temporarily disconnects.
 * The window closes immediately after your last commands (e.g., right after `driver.quit()`).
 
-> **Note:** Despite the warning, the script still captures screenshots correctly.
+> **Note:** Despite the warning, the screenshot is usually captured correctly.
 
 ---
 
