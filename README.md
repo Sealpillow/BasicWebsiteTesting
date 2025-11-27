@@ -95,7 +95,27 @@ screenshots/<mode>/<country>/<page-path>/<filename>.png
 
 ---
 
-## **8. DevTools Screenshot Warning**
+## **8. Installation Requirements**
+
+Before running the script, you'll need to install the required Python packages.
+
+1. **Install dependencies:**
+
+   Use `pip` to install the necessary packages:
+
+   ```bash
+   pip install selenium webdriver-manager pillow
+   ```
+
+   * **`selenium`:** The web automation library for controlling the browser.
+   * **`webdriver-manager`:** Manages ChromeDriver versions automatically.
+   * **`pillow`:** A Python Imaging Library for handling images.
+
+2. **Optional:** Ensure you have a working version of **Google Chrome** installed, as the script uses ChromeDriver to interact with the browser.
+
+---
+
+## **9. DevTools Screenshot Warning**
 
 ```
 ⚠ Could not screenshot image/video: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot take screenshot with 0 width."}
@@ -113,5 +133,5 @@ This warning occurs when Chrome closes the DevTools session before Selenium comp
 
 > **Note:** Despite the warning, the screenshot is usually captured correctly.
 
----
+Sure! You can add a section in the README for the installation requirements. Here's how it would look:
 
