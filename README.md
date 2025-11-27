@@ -1,10 +1,4 @@
-# BasicWebsiteTesting
-
-Here’s a **refactored, tighter version** of your script summary while keeping all the key points and technical clarity:
-
----
-
-# **Script Summary: Pedro Shoes Media QA Automation**
+#  Pedro Shoes Media QA Automation**
 
 This script automates **verification and screenshot capture of images and videos** on Pedro Shoes’ website across multiple countries, pages, and device modes, producing a detailed report.
 
