@@ -1,0 +1,38 @@
+
+===== DESKTOP =====
+
+--- FOUND ---
+  sg/:
+    1. 3_toppromobanner_pw_salestext_1_sgmy.jpg
+    2. 3_toppromobanner_pm_salestext_1_sgmy.jpg
+  sg/new/new-in/women-new-arrivals:
+    1. PW4-95940013-2_SILVER.jpg
+  sg/thejournal/the-art-of-living/the-art-of-perspective-season-that-remembers.html:
+    1. story-a1.mp4
+  tw/:
+    1. 3_toppromobanner_pw_salestext_1_tw_cn.jpg
+    2. 3_toppromobanner_pm_salestext_1_tw_cn.jpg
+  at/:
+    1. 3_toppromobanner_pw_salestext_1_en.jpg
+    2. 3_toppromobanner_pm_salestext_1_en.jpg
+
+--- NOT FOUND ---
+
+===== MOBILE =====
+
+--- FOUND ---
+  sg/:
+    1. 3_toppromobanner_pw_salestext_1_sgmy_mobile.jpg
+    2. 3_toppromobanner_pm_salestext_1_sgmy_mobile.jpg
+  sg/new/new-in/women-new-arrivals:
+    1. PW4-95940013-2_SILVER.jpg
+  sg/thejournal/the-art-of-living/the-art-of-perspective-season-that-remembers.html:
+    1. story-a1-mobile.mp4
+  tw/:
+    1. 3_toppromobanner_pw_salestext_1_tw_cn_mobile.jpg
+    2. 3_toppromobanner_pm_salestext_1_tw_cn_mobile.jpg
+  at/:
+    1. 3_toppromobanner_pm_salestext_1_en_mobile.jpg
+    2. 3_toppromobanner_pm_salestext_1_en_mobile.jpg
+
+--- NOT FOUND ---
