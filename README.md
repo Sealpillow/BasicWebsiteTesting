@@ -85,6 +85,18 @@ screenshots/<mode>/<country>/<page-path>/<filename>
 
 ---
 
-I can also create a **visual workflow diagram** showing the process from `page load → overlay removal → screenshot → reporting`, which makes it easier for a team to understand at a glance.
+## **⚠ Could not screenshot image/video: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot take screenshot with 0 width."} **
 
-Do you want me to make that diagram next?
+This warning is caused by Chrome closing the DevTools session before Selenium’s screenshot call completes.
+
+This typically happens when:
+
+* The browser is under heavy load.
+* The tab navigates or refreshes while Selenium is taking a screenshot.
+* ChromeDriver temporarily disconnects.
+* The window closes immediately after your last commands (e.g., right after `driver.quit()`).
+
+> **Note:** Despite the warning, the script still captures screenshots correctly.
+
+---
+
